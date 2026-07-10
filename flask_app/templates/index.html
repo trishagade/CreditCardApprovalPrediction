@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Credit Card Approval Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Credit Card Approval Prediction</h1>
+        <p class="subtitle">Enter applicant details to get an instant eligibility prediction.</p>
+
+        <form action="/predict" method="POST" class="form-grid">
+
+            <div class="field">
+                <label for="gender">Gender</label>
+                <select name="gender" id="gender" required>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="age_years">Age (years)</label>
+                <input type="number" step="1" min="18" max="100" name="age_years" id="age_years" required>
+            </div>
+
+            <div class="field">
+                <label for="own_car">Owns a Car?</label>
+                <select name="own_car" id="own_car" required>
+                    <option value="Y">Yes</option>
+                    <option value="N">No</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="own_realty">Owns Property?</label>
+                <select name="own_realty" id="own_realty" required>
+                    <option value="Y">Yes</option>
+                    <option value="N">No</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="cnt_children">Number of Children</label>
+                <input type="number" min="0" max="10" name="cnt_children" id="cnt_children" value="0" required>
+            </div>
+
+            <div class="field">
+                <label for="cnt_fam_members">Family Size</label>
+                <input type="number" min="1" max="12" name="cnt_fam_members" id="cnt_fam_members" value="1" required>
+            </div>
+
+            <div class="field">
+                <label for="income">Annual Income</label>
+                <input type="number" step="0.01" min="0" name="income" id="income" required>
+            </div>
+
+            <div class="field">
+                <label for="income_type">Income Type</label>
+                <select name="income_type" id="income_type" required>
+                    {% for t in income_types %}
+                    <option value="{{ t }}">{{ t }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="employment_years">Years Employed</label>
+                <input type="number" step="0.1" min="0" max="60" name="employment_years" id="employment_years" value="0">
+            </div>
+
+            <div class="field">
+                <label for="education_type">Education Level</label>
+                <select name="education_type" id="education_type" required>
+                    {% for t in education_types %}
+                    <option value="{{ t }}">{{ t }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="family_status">Family Status</label>
+                <select name="family_status" id="family_status" required>
+                    {% for t in family_statuses %}
+                    <option value="{{ t }}">{{ t }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="housing_type">Housing Type</label>
+                <select name="housing_type" id="housing_type" required>
+                    {% for t in housing_types %}
+                    <option value="{{ t }}">{{ t }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="occupation_type">Occupation</label>
+                <select name="occupation_type" id="occupation_type" required>
+                    {% for t in occupation_types %}
+                    <option value="{{ t }}">{{ t }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="field checkbox-field">
+                <label><input type="checkbox" name="flag_work_phone" value="1"> Has Work Phone</label>
+            </div>
+            <div class="field checkbox-field">
+                <label><input type="checkbox" name="flag_phone" value="1"> Has Phone</label>
+            </div>
+            <div class="field checkbox-field">
+                <label><input type="checkbox" name="flag_email" value="1"> Has Email</label>
+            </div>
+
+            <div class="field submit-field">
+                <button type="submit">Check Eligibility</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

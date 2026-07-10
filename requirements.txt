@@ -1,0 +1,13 @@
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
+xgboost
+flask
+joblib
+jupyter
+notebook
+
+# Optional - only needed for the IBM Watson cloud deployment script
+# ibm-watson-machine-learning

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container result-container">
+        {% if error %}
+            <h1>Something went wrong</h1>
+            <p class="error">{{ error }}</p>
+        {% else %}
+            <div class="result-badge {{ 'approved' if approved else 'rejected' }}">
+                {{ result }}
+            </div>
+            <p class="confidence">Model confidence: <strong>{{ confidence }}%</strong></p>
+            <p class="disclaimer">
+                This is an automated prediction based on the information provided and
+                historical patterns learned by the model. It should be used to assist,
+                not replace, a full credit review.
+            </p>
+        {% endif %}
+        <a class="back-link" href="/">&larr; Try another applicant</a>
+    </div>
+</body>
+</html>
