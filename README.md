@@ -172,3 +172,13 @@ dataset (see step 2) for meaningful results.
 XGBoost · Machine Learning Algorithms · Decision Tree Learning ·
 NumPy · Python · Scikit-Learn · Matplotlib · Flask · IBM Watson Machine
 Learning
+## 🎥 Project Demonstration
+
+Demo Video:
+https://drive.google.com/file/d/19J7gBYpbKcBFcEwtxx5UXTS9pN3Xo3S0/view?usp=sharing
+
+Live Application:
+https://creditcardapprovalprediction-yt1k.onrender.com
+
+GitHub Repository:
+https://github.com/trishagade/CreditCardApprovalPrediction
