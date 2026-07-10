@@ -8,6 +8,7 @@ flask
 joblib
 jupyter
 notebook
+gunicorn
 
 # Optional - only needed for the IBM Watson cloud deployment script
 # ibm-watson-machine-learning
